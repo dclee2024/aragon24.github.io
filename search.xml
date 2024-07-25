@@ -88,19 +88,35 @@
 <p>​	随后在hexo项目文件source目录下创建CNAME文件，写入新域名dcblog.site。</p>
 <p>​	回到Github设置-Github Pages Custom domains填写新域名，保存并等待DNS check successful。</p>
 <p>​	即刻访问新地址！</p>
-<h1 id="Step-IV-Themes配置与优化"><a href="#Step-IV-Themes配置与优化" class="headerlink" title="Step IV Themes配置与优化"></a>Step IV Themes配置与优化</h1><ul>
-<li>如何使网站被google和baidu收录<ul>
-<li>Ref：<a href="https://www.jianshu.com/p/f8ec422ebd52">https://www.jianshu.com/p/f8ec422ebd52</a></li>
-</ul>
+<h1 id="Step-IV-Themes配置与优化"><a href="#Step-IV-Themes配置与优化" class="headerlink" title="Step IV Themes配置与优化"></a>Step IV Themes配置与优化</h1><h2 id="如何使网站被google和bing收录"><a href="#如何使网站被google和bing收录" class="headerlink" title="如何使网站被google和bing收录"></a>如何使网站被google和bing收录</h2><h3 id="生成sitemap"><a href="#生成sitemap" class="headerlink" title="生成sitemap"></a>生成sitemap</h3><p>​	首先安装sitemap生成插件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+
+<p>​	在站点地图配置文件添加如下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 自动生成sitemap</span><br><span class="line">sitemap:</span><br><span class="line">	path: sitemap.xml</span><br></pre></td></tr></table></figure>
+
+<p>​	打开Git Bash输入<code>hexo g</code>，即可在根目录的public文件夹生成sitemap.xml文件。</p>
+<h3 id="HTML验证"><a href="#HTML验证" class="headerlink" title="HTML验证"></a>HTML验证</h3><p>​	选择URL prefix，填写域名。注意，域名应和站点配置文件中的URL内容一致。如果其中一个是dclee2024.github.io，另一个是dcblog.site，则无法被收录。</p>
+<p><img src="/../images/My-First-Blog-%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%88%9B%E5%BB%BA%E4%B8%93%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%9F/image-20240725182911833.png" alt="image-20240725182911833"></p>
+<p>​	下载HTML验证文件，存放在&#x2F;themes&#x2F;next&#x2F;source，执行hexo clean, hexo g, hexo d，稍等片刻返回谷歌网站站长验证界面点击verify，即可完成验证。</p>
+<p>​	到此为止，仅仅能证明网站是你的，但google还不知道你的网站里有啥，所以我们需要提交sitemap。</p>
+<h3 id="sitemap提交"><a href="#sitemap提交" class="headerlink" title="sitemap提交"></a>sitemap提交</h3><p>​	在站长界面点击sitemaps，在Add a new sitemap的输入框内填写sitemap.xml，提交即可。</p>
+<p>​	<img src="/../images/My-First-Blog-%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%88%9B%E5%BB%BA%E4%B8%93%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%9F/image-20240725183932204.png" alt="image-20240725183932204"></p>
+<p>​	状态显示success后，等待一段时间，尝试google搜索site:dcblog.site，验证是否成功收录。</p>
+<p><img src="/../images/My-First-Blog-%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%88%9B%E5%BB%BA%E4%B8%93%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%9F/image-20240725181820577.png" alt="image-20240725181820577"></p>
+<ul>
+<li><p>Ref：<a href="https://suda-liu.github.io/2020/04/07/%E4%B8%80%E6%AC%A1%E6%88%90%E5%8A%9F%E7%9A%84%E4%BD%93%E9%AA%8C-Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95/">https://suda-liu.github.io/2020/04/07/%E4%B8%80%E6%AC%A1%E6%88%90%E5%8A%9F%E7%9A%84%E4%BD%93%E9%AA%8C-Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95/</a></p>
 </li>
-<li>部署站内搜索功能<ul>
-<li>Ref：<a href="https://www.sqlsec.com/2017/12/hexosearch.html#%E6%A6%82%E8%A7%88">https://www.sqlsec.com/2017/12/hexosearch.html#%E6%A6%82%E8%A7%88</a></li>
+<li><p>部署站内搜索功能</p>
+<ul>
+<li>Ref：<a href="https://blog.csdn.net/aoman_hao/article/details/86713171">https://blog.csdn.net/aoman_hao/article/details/86713171</a></li>
 </ul>
+<p>建议trigger选择auto而非manual。</p>
 </li>
-<li>留坑<ul>
+<li><p>留坑</p>
+<ul>
 <li>配置中英文转换</li>
-<li>在关于界面配置更多彩的排版</li>
-<li>配置留言板</li>
+<li>在about界面配置更多彩的排版</li>
+<li>在about界面配置留言板</li>
 <li>给代码块添加高亮</li>
 </ul>
 </li>
