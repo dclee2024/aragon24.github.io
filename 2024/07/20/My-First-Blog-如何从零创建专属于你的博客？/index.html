@@ -30,9 +30,9 @@
 <meta property="og:description" content="第一篇主要写建立博客的方法。目前主页还是毛坯房的状态，以后会边写内容边做优化，本篇内容也会持续更新。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/My-First-Blog-%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%88%9B%E5%BB%BA%E4%B8%93%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%9F/images.png">
-<meta property="og:image" content="http://example.com/2024/07/20/images/My-First-Blog-%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%88%9B%E5%BB%BA%E4%B8%93%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%9F/image-20240724225955409.png">
+<meta property="og:image" content="http://example.com/images/My-First-Blog-%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%88%9B%E5%BB%BA%E4%B8%93%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%9F/image-20240724225955409.png">
 <meta property="article:published_time" content="2024-07-20T14:12:29.000Z">
-<meta property="article:modified_time" content="2024-07-24T15:03:09.554Z">
+<meta property="article:modified_time" content="2024-07-25T08:52:44.270Z">
 <meta property="article:author" content="抡大锤">
 <meta property="article:tag" content="博客建站">
 <meta property="article:tag" content="教程">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-07-24 23:03:09" itemprop="dateModified" datetime="2024-07-24T23:03:09+08:00">2024-07-24</time>
+                <time title="修改时间：2024-07-25 16:52:44" itemprop="dateModified" datetime="2024-07-25T16:52:44+08:00">2024-07-25</time>
               </span>
 
           
@@ -346,8 +346,7 @@
 <h1 id="Step-III-域名的注册与解析"><a href="#Step-III-域名的注册与解析" class="headerlink" title="Step III 域名的注册与解析"></a>Step III 域名的注册与解析</h1><p>​	目前域名是冗长的.github.io，不利于辨识，且国内IP不使用VPN无法解析它。而目前国际主流的域名注册商如GoDaddy、Network Solutions提供的域名，也均不能在国内访问。</p>
 <h2 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a>域名注册</h2><p>​	不希望辛苦搭建的博客沦为境外势力，我们需要注册一个国内IP可以访问的域名。阿里云、腾讯云提供的域名不少价格低廉，可以一次买10年，但需要各种实名认证，比较麻烦。咬咬牙，注册了一个腾讯云十年域名。</p>
 <h2 id="域名解析与绑定"><a href="#域名解析与绑定" class="headerlink" title="域名解析与绑定"></a>域名解析与绑定</h2><p>​	很多教程说要在cmd ping出网站的ip地址，使用ip地址记录值完成解析。但是ip地址在一段时间后有可能改变，出现网址定向失败的情况。打开腾讯云控制台，点击新手快速解析，选择CNAME记录，在目标域名处输入github page域名，点击确定即可。</p>
-<img src="../images/My-First-Blog-如何从零创建专属于你的博客？/image-20240724225955409.png" alt="image-20240724225955409" style="zoom: 25%;" />
-
+<p><img src="/../images/My-First-Blog-%E5%A6%82%E4%BD%95%E4%BB%8E%E9%9B%B6%E5%88%9B%E5%BB%BA%E4%B8%93%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%9F/image-20240724225955409.png" alt="image-20240724225955409"></p>
 <p>​	随后在hexo项目文件source目录下创建CNAME文件，写入新域名dcblog.site。</p>
 <p>​	回到Github设置-Github Pages Custom domains填写新域名，保存并等待DNS check successful。</p>
 <p>​	即刻访问新地址！</p>
